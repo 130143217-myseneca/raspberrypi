@@ -183,10 +183,10 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 # msgid=datapoint.id~\
 # latlong=lat:long'     
 
-     jsoncriteria='uid="Person_ID",filter:allrecords~\
+     jsoncriteria='uid=Person_ID,filter:allrecords~\
 subtopics=Gender,Age,Occupation\
-values="Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level"\
-identifiers="Person_ID"\
+values=Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level\
+identifiers=Person_ID\
 datetime=datapoint.updated_at~\
 msgid=datapoint.id~\
 latlong=lat:long'     

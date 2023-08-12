@@ -200,9 +200,12 @@ while True:
     jsonline = json.loads(line)   
     # YOU CAN REPLACE THIS FUNCTION: getlatlong(reader,jsonline['metadata']['dsn'],'dsn') -----> WITH  getlatlong2(reader) 
     # fOR EXAMPLE: 
-    lat,long,ident=getlatlong2(reader)   
+    #lat,long,ident=getlatlong2(reader)   
+    
     #lat,long,ident=getlatlong(reader,jsonline['metadata']['dsn'],'dsn')
-    line = line[:-2] + "," + '"lat":' + lat + ',"long":'+long + ',"identifier":"' + ident + '"}'
+
+    #line = line[:-2] + "," + '"lat":' + lat + ',"long":'+long + ',"identifier":"' + ident + '"}'
+    #line = line
     if not line:
         #break
        file1.seek(0)
