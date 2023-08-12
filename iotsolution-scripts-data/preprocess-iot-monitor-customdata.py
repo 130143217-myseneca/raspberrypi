@@ -188,8 +188,7 @@ subtopics=Gender,Age,Occupation\
 values=Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level\
 identifiers=Person_ID\
 datetime=datapoint.updated_at~\
-msgid=datapoint.id~\
-latlong=lat:long'     
+msgid=datapoint.id~'    
 
 #     jsoncriteria='uid=entry.0.resource.id,filter:allrecords~\
 #subtopics=entry.1.resource.type.0.coding.0.code~\
@@ -219,8 +218,8 @@ latlong=lat:long'
 
      
 #     pathtotmlattrs='oem=id,lat=subject.reference,long=component.0.code.coding.0.display,location=component.1.valueQuantity.value'     
-     pathtotmlattrs='oem=n/a,lat=n/a,long=n/a,location=n/a,identifier=n/a'     
-     
+     #pathtotmlattrs='oem=n/a,lat=n/a,long=n/a,location=n/a,identifier=n/a'     
+     pathtotmllattrs='Person_ID=n/a,Gender=n/a,Age=n/a,Occupation=n/a'
      try:
         result=maadstml.viperpreprocesscustomjson(VIPERTOKEN,VIPERHOST,VIPERPORT,topic,producerid,offset,jsoncriteria,rawdataoutput,maxrows,enabletls,delay,brokerhost,
                                           brokerport,microserviceid,topicid,streamstojoin,preprocesslogic,preprocessconditions,identifier,
