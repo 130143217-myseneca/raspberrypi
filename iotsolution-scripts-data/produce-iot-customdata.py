@@ -54,6 +54,7 @@ HTTPADDR='https://'
 def getparams():
      global VIPERHOST, VIPERPORT, HTTPADDR
      with open("/Viper-produce/admin.tok", "r") as f:
+     #with open("admin.tok", "r") as f:
         VIPERTOKEN=f.read()
 
      if VIPERHOST=="":
@@ -198,8 +199,9 @@ while True:
   try:
     jsonline = json.loads(line)   
     # YOU CAN REPLACE THIS FUNCTION: getlatlong(reader,jsonline['metadata']['dsn'],'dsn') -----> WITH  getlatlong2(reader) 
-    # fOR EXAMPLE: lat,long,ident=getlatlong2(reader)   
-    lat,long,ident=getlatlong(reader,jsonline['metadata']['dsn'],'dsn')
+    # fOR EXAMPLE: 
+    lat,long,ident=getlatlong2(reader)   
+    #lat,long,ident=getlatlong(reader,jsonline['metadata']['dsn'],'dsn')
     line = line[:-2] + "," + '"lat":' + lat + ',"long":'+long + ',"identifier":"' + ident + '"}'
     if not line:
         #break
