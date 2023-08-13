@@ -220,12 +220,12 @@ latlong=lat:long'
      usemysql=1
 
 #     streamstojoin="Current,Voltage,Power"
-     streamstojoin=""
+     streamstojoin="SleepDuration,QualityOfSleep,PhysicalActivityLevel,StressLevel,DailySteps"
  
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='avg,avg'
+     preprocesslogic='avg,avg,trend,avg,trend'
      #preprocesslogic='dataage_-4_day,trend,min,max' # millisecond,second,minute,hour,day
      #preprocesslogic='dataage_-4_hour' # millisecond,second,minute,hour,day
 #     preprocesslogic='dataage_1_minute' # millisecond,second,minute,hour,day
@@ -233,7 +233,7 @@ latlong=lat:long'
 #     preprocesslogic='dataage_1_millisecond' # millisecond,second,minute,hour,day
      
      #Added a preprocess condition where Data has to be of integertype
-     preprocessconditions="PersonData.DataType=integer"
+     preprocessconditions="DataType=integer"
      #pathtotmlattrs='oem=id,lat=subject.reference,long=component.0.code.coding.0.display,location=component.1.valueQuantity.value'     
      pathtotmlattrs='oem=n/a,lat=n/a,long=n/a,location=n/a,identifier=n/a'     
      #pathtotmlattrs='oem=Person_ID,location=Location'
