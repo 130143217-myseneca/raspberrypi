@@ -200,7 +200,9 @@ subtopics=Occupation~\
 values=Sleep_Duration~\
 identifiers=Person_ID~\
 datetime=DateTime~\
-msgid=Person_ID~'
+msgid=Person_ID~\
+latlong=lat:long'
+
      #Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level
 
 
