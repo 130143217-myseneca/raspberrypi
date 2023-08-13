@@ -184,11 +184,12 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 # latlong=lat:long'     
 
      jsoncriteria='uid=Occupation,filter:allrecords~\
-subtopics=Location~\
-values=Sleep_Duration.value,Stress_Level.value~\
+subtopics=Location,Gender~\
+values=Sleep_Duration,Stress_Level~\
 identifiers=Person_ID~\
 datetime=DateTime~\
-msgid=Person_ID~'    
+msgid=Person_ID~\
+latlong=lat:long'     
 
 #     jsoncriteria='uid=entry.0.resource.id,filter:allrecords~\
 #subtopics=entry.1.resource.type.0.coding.0.code~\
@@ -209,7 +210,7 @@ msgid=Person_ID~'
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='min,avg'
+     preprocesslogic='avg,avg'
      #preprocesslogic='dataage_-4_day,trend,min,max' # millisecond,second,minute,hour,day
      #preprocesslogic='dataage_-4_hour' # millisecond,second,minute,hour,day
 #     preprocesslogic='dataage_1_minute' # millisecond,second,minute,hour,day
