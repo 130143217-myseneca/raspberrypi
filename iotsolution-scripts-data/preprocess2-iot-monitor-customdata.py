@@ -133,7 +133,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
      microserviceid=''
       #These are the streams to preprocess
      #streamstojoin=substream + "," + substream + "," + substream
-     streamstojoin="Sleep_Duration_preprocessed_Avg, Quality_of_Sleep_preprocessed_Avg, Physical_Activity_Level_preprocessed_Trend, Stress_Level_preprocessed_Trend" # need to edit these streams for data aggregation
+     streamstojoin="Sleep_Duration_preprocessed_Avg, Quality_of_Sleep_preprocessed_Avg, Physical_Activity_Level_preprocessed_Avg, Stress_Level_preprocessed_Avg" # need to edit these streams for data aggregation
 
     #Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level
       # You can preprocess with the following functions: MAX, MIN, SUM, AVG, COUNT, DIFF

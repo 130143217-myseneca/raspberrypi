@@ -195,13 +195,13 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 #Subtopics need to match the values to correctly display aggregated information
 #uid is organized by the Occupation
 
-     jsoncriteria='uid=Occupation,filter:allrecords~\
-subtopics=Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level~\
-values=Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level~\
+     jsoncriteria='uid=Location,filter:allrecords~\
+subtopics=Occupation~\
+values=Sleep_Duration~\
 identifiers=Person_ID~\
 datetime=DateTime~\
 msgid=Person_ID~'
-     
+     #Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level
 
 
 #     jsoncriteria='uid=entry.0.resource.id,filter:allrecords~\
@@ -223,7 +223,7 @@ msgid=Person_ID~'
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='avg,avg,avg,avg'
+     #preprocesslogic='avg,avg,avg,avg'
      #preprocesslogic='dataage_-4_day,trend,min,max' # millisecond,second,minute,hour,day
      #preprocesslogic='dataage_-4_hour' # millisecond,second,minute,hour,day
 #     preprocesslogic='dataage_1_minute' # millisecond,second,minute,hour,day
