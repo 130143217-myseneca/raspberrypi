@@ -120,7 +120,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 
       # Roll back each data stream by 10 percent - change this to a larger number if you want more data
       # For supervised machine learning you need a minimum of 30 data points in each stream
-     maxrows=1000
+     maxrows=3000
       # Go to the last offset of each stream: If lastoffset=500, then this function will rollback the 
       # streams to offset=500-50=450
      offset=-1
@@ -183,12 +183,12 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 # msgid=datapoint.id~\
 # latlong=lat:long'     
 
-     jsoncriteria='uid=Person_ID,filter:allrecords~\
-subtopics=Gender,Age,Occupation\
-values=Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level\
-identifiers=Person_ID\
-datetime=datapoint.updated_at~\
-msgid=datapoint.id~'    
+     jsoncriteria='uid=Occupation,filter:allrecords~\
+subtopics=Quality_of_Sleep~\
+values=Quality_of_Sleep.value~\
+identifiers=Person_ID~\
+datetime=DateTime~\
+msgid=Person_ID~'    
 
 #     jsoncriteria='uid=entry.0.resource.id,filter:allrecords~\
 #subtopics=entry.1.resource.type.0.coding.0.code~\
@@ -204,12 +204,12 @@ msgid=datapoint.id~'
      usemysql=1
 
 #     streamstojoin="Current,Voltage,Power"
-     streamstojoin=""
+     streamstojoin="Sleep_Duration,Stress_Level"
  
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='anomprob,trend,avg'
+     preprocesslogic='trend,avg'
      #preprocesslogic='dataage_-4_day,trend,min,max' # millisecond,second,minute,hour,day
      #preprocesslogic='dataage_-4_hour' # millisecond,second,minute,hour,day
 #     preprocesslogic='dataage_1_minute' # millisecond,second,minute,hour,day
@@ -217,10 +217,14 @@ msgid=datapoint.id~'
 #     preprocesslogic='dataage_1_millisecond' # millisecond,second,minute,hour,day
 
      
-#     pathtotmlattrs='oem=id,lat=subject.reference,long=component.0.code.coding.0.display,location=component.1.valueQuantity.value'     
-     #pathtotmlattrs='oem=n/a,lat=n/a,long=n/a,location=n/a,identifier=n/a'     
-     pathtotmllattrs='Person_ID=n/a,Gender=n/a,Age=n/a,Occupation=n/a'
+     #pathtotmlattrs='oem=id,lat=subject.reference,long=component.0.code.coding.0.display,location=component.1.valueQuantity.value'     
+     pathtotmlattrs='oem=n/a,lat=n/a,long=n/a,location=n/a,identifier=n/a'     
+     #pathtotmlattrs='oem=Person_ID,location=Location'
      try:
+     #    result=maadstml.viperpreprocesscustomjson(VIPERTOKEN,VIPERHOST,VIPERPORT,topic,producerid,offset,jsoncriteria,rawdataoutput,maxrows,enabletls,delay,brokerhost,
+     #                                      brokerport,microserviceid,topicid,streamstojoin,preprocesslogic,preprocessconditions,identifier,
+     #                                      preprocesstopic,array,saveasarray,timedelay,asynctimeout,usemysql,tmlfilepath,pathtotmlattrs)
+        
         result=maadstml.viperpreprocesscustomjson(VIPERTOKEN,VIPERHOST,VIPERPORT,topic,producerid,offset,jsoncriteria,rawdataoutput,maxrows,enabletls,delay,brokerhost,
                                           brokerport,microserviceid,topicid,streamstojoin,preprocesslogic,preprocessconditions,identifier,
                                           preprocesstopic,array,saveasarray,timedelay,asynctimeout,usemysql,tmlfilepath,pathtotmlattrs)
