@@ -183,13 +183,24 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 # msgid=datapoint.id~\
 # latlong=lat:long'     
 
+#      jsoncriteria='uid=Occupation,filter:allrecords~\
+# subtopics=Locationr~\
+# values=Sleep_Duration~\
+# identifiers=Person_ID~\
+# datetime=DateTime~\
+# msgid=Person_ID~\
+# latlong=lat:long'     
+
+
+
      jsoncriteria='uid=Occupation,filter:allrecords~\
-subtopics=Location~\
-values=Sleep_Duration~\
+subtopics=Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level~\
+values=Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level~\
 identifiers=Person_ID~\
 datetime=DateTime~\
-msgid=Person_ID~\
-latlong=lat:long'     
+msgid=Person_ID~'
+     
+
 
 #     jsoncriteria='uid=entry.0.resource.id,filter:allrecords~\
 #subtopics=entry.1.resource.type.0.coding.0.code~\
@@ -210,7 +221,7 @@ latlong=lat:long'
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='avg,avg'
+     preprocesslogic='avg,avg,trend,trend'
      #preprocesslogic='dataage_-4_day,trend,min,max' # millisecond,second,minute,hour,day
      #preprocesslogic='dataage_-4_hour' # millisecond,second,minute,hour,day
 #     preprocesslogic='dataage_1_minute' # millisecond,second,minute,hour,day
