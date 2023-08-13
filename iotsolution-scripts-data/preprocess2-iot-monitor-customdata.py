@@ -116,7 +116,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 
       # Roll back each data stream by 10 percent - change this to a larger number if you want more data
       # For supervised machine learning you need a minimum of 30 data points in each stream
-     maxrows=500
+     maxrows=1000
       # Go to the last offset of each stream: If lastoffset=500, then this function will rollback the 
       # streams to offset=500-50=450
      offset=-1
@@ -133,13 +133,13 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
      microserviceid=''
       #These are the streams to preprocess
      #streamstojoin=substream + "," + substream + "," + substream
-     streamstojoin="Sleep_Duration_preprocessed_Avg, Quality_of_Sleep_preprocessed_Avg, Physical_Activity_Level_preprocessed_Avg, Stress_Level_preprocessed_Avg" # need to edit these streams for data aggregation
+     streamstojoin="SleepDuration_preprocessed_Avg, QualityOfSleep_preprocessed_Avg" # need to edit these streams for data aggregation
 
     #Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level
       # You can preprocess with the following functions: MAX, MIN, SUM, AVG, COUNT, DIFF
       # here we will take max values of the arcturus-humidity, we will Diff arcturus-temperature, and average arcturus-Light_Intensity
       # NOTE: The number of process logic functions MUST match the streams - the operations will be applied in the same order
-     preprocesslogic='avg,avg,avg,avg'
+     preprocesslogic='avg,avg'
      #preprocesslogic='diff'
      preprocessconditions=''
     
