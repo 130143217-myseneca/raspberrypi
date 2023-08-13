@@ -184,8 +184,8 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 # latlong=lat:long'     
 
      jsoncriteria='uid=Occupation,filter:allrecords~\
-subtopics=Location,Gender~\
-values=Sleep_Duration,Stress_Level~\
+subtopics=Sleep_Duration,Stress_Level~\
+values=Sleep_Duration.value,Stress_Level.value~\
 identifiers=Person_ID~\
 datetime=DateTime~\
 msgid=Person_ID~\
