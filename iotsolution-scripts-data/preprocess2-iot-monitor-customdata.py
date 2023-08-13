@@ -141,7 +141,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
       # NOTE: The number of process logic functions MUST match the streams - the operations will be applied in the same order
      preprocesslogic='avg,avg,max,avg,min'
      #preprocesslogic='diff'
-     preprocessconditions="DataType=integer"
+     preprocessconditions=""
     
      # This is the topic id representing the device data or entity data you want to preprocess
      topicid=-1
