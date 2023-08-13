@@ -185,7 +185,7 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
 
      jsoncriteria='uid=Occupation,filter:allrecords~\
 subtopics=Location,BMI_Category,Sleep_Disorder~\
-values=Sleep_Duration,Stress_Level~\
+values=Sleep_Duration~\
 identifiers=Person_ID~\
 datetime=DateTime~\
 msgid=Person_ID~\
@@ -205,7 +205,7 @@ latlong=lat:long'
      usemysql=1
 
 #     streamstojoin="Current,Voltage,Power"
-     streamstojoin="Sleep_Duration,Stress_Level"
+     streamstojoin=""
  
      identifier = "IoT device performance and failures"
 
