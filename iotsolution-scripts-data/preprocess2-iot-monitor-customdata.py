@@ -133,13 +133,13 @@ def sendtransactiondata(maintopic,mainproducerid,VIPERPORT,index,preprocesstopic
      microserviceid=''
       #These are the streams to preprocess
      #streamstojoin=substream + "," + substream + "," + substream
-     streamstojoin="SleepDuration_preprocessed_Max,QualityOfSleep_preprocessed_Avg" # need to edit these streams for data aggregation
+     streamstojoin="SleepDuration_preprocessed_Avg,QualityOfSleep_preprocessed_Avg" # need to edit these streams for data aggregation
 
     #Sleep_Duration,Quality_of_Sleep,Physical_Activity_Level,Stress_Level
       # You can preprocess with the following functions: MAX, MIN, SUM, AVG, COUNT, DIFF
       # here we will take max values of the arcturus-humidity, we will Diff arcturus-temperature, and average arcturus-Light_Intensity
       # NOTE: The number of process logic functions MUST match the streams - the operations will be applied in the same order
-     preprocesslogic='max,avg'
+     preprocesslogic='avg,avg'
      #preprocesslogic='diff'
      preprocessconditions=""
     
